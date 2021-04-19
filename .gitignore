@@ -37,3 +37,11 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+/apps/blog-wordpress-gatsby/node_modules
+/apps/blog-wordpress-gatsby/public
+/apps/blog-wordpress-gatsby/.cache
+
+/apps/blog-medium-emily-xiong/node_modules
+/apps/blog-medium-emily-xiong/public
+/apps/blog-medium-emily-xiong/.cache
