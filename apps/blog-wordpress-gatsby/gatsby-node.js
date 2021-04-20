@@ -23,6 +23,13 @@ exports.createPages = async (gatsbyUtilities) => {
     return;
   }
 
+  gatsbyUtilities.actions.createRedirect({
+    fromPath: `/`,
+    toPath: `/blogs`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
   // If there are posts, create pages for them
   await createIndividualBlogPostPages({ posts, gatsbyUtilities });
 
@@ -66,17 +73,7 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
  * This function creates all the individual blog pages in this site
  */
 async function createBlogPostArchive({ posts, gatsbyUtilities }) {
-  const graphqlResult = await gatsbyUtilities.graphql(/* GraphQL */ `
-    {
-      wp {
-        readingSettings {
-          postsPerPage
-        }
-      }
-    }
-  `);
-
-  const { postsPerPage } = graphqlResult.data.wp.readingSettings;
+  const postsPerPage = parseInt(process.env.NX_POSTS_PER_PAGE, 10);
 
   const postsChunkedIntoArchivePages = chunk(posts, postsPerPage);
   const totalPages = postsChunkedIntoArchivePages.length;
@@ -87,7 +84,9 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
 
       const getPagePath = (page) => {
         if (page > 0 && page <= totalPages) {
-          return `/blogs/${page}`;
+          return page === 1
+            ? process.env.NX_BLOGS_BASE_HREF
+            : `${process.env.NX_BLOGS_BASE_HREF}/${page}`;
         }
 
         return null;

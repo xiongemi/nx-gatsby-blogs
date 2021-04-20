@@ -6,7 +6,7 @@ export interface NoPostsFoundProps {}
 export function NoPostsFound(props: NoPostsFoundProps) {
   return (
     <div>
-      <h1>Welcome to no-posts-found!</h1>
+      <h1>No posts found.</h1>
     </div>
   );
 }

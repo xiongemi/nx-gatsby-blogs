@@ -46,6 +46,13 @@
             "jestConfig": "apps/blog-wordpress-gatsby/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "apps/blog-wordpress-gatsby/public",
+            "siteId": "54efdcd6-121a-46b9-aac1-b1dc6fb6b8fb"
+          }
         }
       }
     },
@@ -113,6 +120,13 @@
           "options": {
             "jestConfig": "apps/blog-medium-emily-xiong/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "apps/blog-medium-emily-xiong/public",
+            "siteId": "9e1790a3-42c0-4f40-9c4c-40396ae5728c"
           }
         }
       }

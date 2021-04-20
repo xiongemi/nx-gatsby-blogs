@@ -1,4 +1,6 @@
+import { BlogAuthor } from './blog-author';
 export interface BlogPost {
+  author?: BlogAuthor;
   id: string;
   title: string;
   excerpt: string;

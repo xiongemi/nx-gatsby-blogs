@@ -4,7 +4,12 @@ import {
   BlogPostArchivePropsData,
   transformBlogPostArchivePropsDataToBlogPosts,
 } from './models/blog-post-archive-props-data';
-import { BlogPost, NoPostsFound, PostSummary } from '@nx-gatsby-blogs/ui';
+import {
+  BlogPost,
+  NoPostsFound,
+  PostSummary,
+  PostSummaryList,
+} from '@nx-gatsby-blogs/ui';
 import { Pagination, PaginationItem } from '@material-ui/lab';
 import { BlogPostArchivePropsPageContext } from './models/blog-post-archive-props-page-context';
 
@@ -16,30 +21,12 @@ export interface BlogPostArchiveProps {
 export function BlogPostArchive({ data, pageContext }: BlogPostArchiveProps) {
   const posts: BlogPost[] = transformBlogPostArchivePropsDataToBlogPosts(data);
 
-  if (!posts || !posts.length) {
-    return <NoPostsFound />;
-  }
-
   return (
-    <>
-      {posts.map((post) => {
-        return <PostSummary key={post.id} post={post}></PostSummary>;
-      })}
-      {pageContext.totalPages > 0 && (
-        <Pagination
-          color="primary"
-          page={pageContext.pageNumber}
-          count={pageContext.totalPages}
-          renderItem={(item) => (
-            <PaginationItem
-              component={Link}
-              to={`/blogs/${item.page}`}
-              {...item}
-            />
-          )}
-        />
-      )}
-    </>
+    <PostSummaryList
+      posts={posts}
+      currentPageNumber={pageContext.pageNumber}
+      totalPageCount={pageContext.totalPages}
+    />
   );
 }
 
@@ -53,6 +40,17 @@ export const pageQuery = graphql`
       skip: $offset
     ) {
       nodes {
+        author {
+          node {
+            firstName
+            lastName
+            name
+            uri
+            avatar {
+              url
+            }
+          }
+        }
         id
         excerpt
         date(formatString: "MMMM DD, YYYY")

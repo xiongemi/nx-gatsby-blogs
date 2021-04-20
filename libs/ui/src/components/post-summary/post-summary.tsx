@@ -1,20 +1,24 @@
 import {
+  Avatar,
   Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
+  CardHeader,
   CardMedia,
+  Link,
   Typography,
 } from '@material-ui/core';
 import React from 'react';
 import { BlogPost } from '../../models/blog-post';
+import parse from 'html-react-parser';
 
 export interface PostSummaryProps {
   post: BlogPost;
+  showAuthor?: boolean;
 }
 
-export function PostSummary({ post }: PostSummaryProps) {
+export function PostSummary({ post, showAuthor = true }: PostSummaryProps) {
   return (
     <Card>
       <CardActionArea>
@@ -28,19 +32,27 @@ export function PostSummary({ post }: PostSummaryProps) {
           <Typography gutterBottom variant="h5" component="h2">
             {post.title}
           </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            {post.date}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {post.excerpt}
+          {!showAuthor && (
+            <Typography variant="subtitle1" color="textSecondary">
+              {post.date}
+            </Typography>
+          )}
+          <Typography variant="body2" color="textSecondary" component="div">
+            {parse(post.excerpt)}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
+      {showAuthor && (
+        <CardHeader
+          avatar={
+            post.author.avatar && (
+              <Avatar aria-label={post.author.name} src={post.author.avatar} />
+            )
+          }
+          title={<Link href={post.author.url}>{post.author.name}</Link>}
+          subheader={post.date}
+        />
+      )}
     </Card>
   );
 }

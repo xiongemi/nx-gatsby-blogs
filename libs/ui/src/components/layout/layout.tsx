@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Theme, ThemeProvider } from '@material-ui/core';
+import { Container, Theme, ThemeProvider } from '@material-ui/core';
 
 /* eslint-disable-next-line */
 export interface LayoutProps {
@@ -25,8 +25,7 @@ export function Layout({ children, theme }: LayoutProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-
-        {children}
+        <Container maxWidth="md">{children}</Container>
       </ThemeProvider>
     </>
   );
