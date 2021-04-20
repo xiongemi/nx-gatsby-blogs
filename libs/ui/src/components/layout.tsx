@@ -10,13 +10,13 @@ import {
   Toolbar,
   Typography,
 } from '@material-ui/core';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 
 export interface LayoutProps {
   children: React.ReactNode;
   theme: Theme;
-  title: string;
   homeLink: string;
+  title: string;
 }
 
 export function Layout({ children, theme, title, homeLink }: LayoutProps) {

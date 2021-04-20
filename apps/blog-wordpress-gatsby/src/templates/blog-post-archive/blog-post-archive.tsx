@@ -1,7 +1,7 @@
 import { BlogPost, PostSummaryList } from '@nx-gatsby-blogs/ui';
 import { graphql } from 'gatsby';
 import React from 'react';
-import AppLayout from '../app-layout';
+import AppLayout from '../../components/app-layout';
 
 import {
   BlogPostArchivePropsData,
