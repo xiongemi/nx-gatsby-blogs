@@ -43,7 +43,7 @@ export function PostSummaryList({
             renderItem={(item) => (
               <PaginationItem
                 component={Link}
-                to={`/blogs/${item.page}`}
+                to={`${process.env.NX_BLOGS_BASE_HREF}/${item.page}`}
                 {...item}
               />
             )}

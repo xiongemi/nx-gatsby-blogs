@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import TopLayout from './top-layout';
+import AppLayout from './app-layout';
 
-describe('TopLayout', () => {
+describe('AppLayout', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<TopLayout />);
+    const { baseElement } = render(<AppLayout />);
     expect(baseElement).toBeTruthy();
   });
 });

@@ -1,6 +1,7 @@
 import { BlogPost, PostSummaryList } from '@nx-gatsby-blogs/ui';
 import { graphql } from 'gatsby';
 import React from 'react';
+import AppLayout from '../app-layout';
 
 import {
   BlogPostArchivePropsData,
@@ -17,11 +18,13 @@ export function BlogPostArchive({ data, pageContext }: BlogPostArchiveProps) {
   const posts: BlogPost[] = transformBlogPostArchivePropsDataToBlogPosts(data);
 
   return (
-    <PostSummaryList
-      posts={posts}
-      currentPageNumber={pageContext.pageNumber}
-      totalPageCount={pageContext.totalPages}
-    />
+    <AppLayout>
+      <PostSummaryList
+        posts={posts}
+        currentPageNumber={pageContext.pageNumber}
+        totalPageCount={pageContext.totalPages}
+      />
+    </AppLayout>
   );
 }
 

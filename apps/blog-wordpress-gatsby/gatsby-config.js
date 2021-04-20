@@ -60,7 +60,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: [],
+        allowList: ['NX_BLOGS_BASE_HREF'],
       },
     },
     `gatsby-plugin-client-side-redirect`,

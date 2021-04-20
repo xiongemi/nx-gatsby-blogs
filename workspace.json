@@ -1,10 +1,20 @@
 {
   "version": 2,
-  "cli": { "defaultCollection": "@nrwl/gatsby" },
+  "cli": {
+    "defaultCollection": "@nrwl/gatsby"
+  },
   "defaultProject": "blog-wordpress-gatsby",
   "generators": {
-    "@nrwl/react": { "application": { "babel": true } },
-    "@nrwl/gatsby": { "application": { "style": "none" } }
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/gatsby": {
+      "application": {
+        "style": "none"
+      }
+    }
   },
   "projects": {
     "blog-wordpress-gatsby": {
@@ -20,11 +30,15 @@
             "color": true,
             "profile": false
           },
-          "configurations": { "production": {} }
+          "configurations": {
+            "production": {}
+          }
         },
         "serve": {
           "executor": "@nrwl/gatsby:server",
-          "options": { "buildTarget": "blog-wordpress-gatsby:build" },
+          "options": {
+            "buildTarget": "blog-wordpress-gatsby:build"
+          },
           "configurations": {
             "production": {
               "buildTarget": "blog-wordpress-gatsby:build:production"
@@ -48,7 +62,7 @@
           }
         },
         "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
+          "executor": "@netlify-builder/deploy:deploy",
           "options": {
             "outputPath": "apps/blog-wordpress-gatsby/public",
             "siteId": "54efdcd6-121a-46b9-aac1-b1dc6fb6b8fb"
@@ -95,11 +109,15 @@
             "color": true,
             "profile": false
           },
-          "configurations": { "production": {} }
+          "configurations": {
+            "production": {}
+          }
         },
         "serve": {
           "executor": "@nrwl/gatsby:server",
-          "options": { "buildTarget": "blog-medium-emily-xiong:build" },
+          "options": {
+            "buildTarget": "blog-medium-emily-xiong:build"
+          },
           "configurations": {
             "production": {
               "buildTarget": "blog-medium-emily-xiong:build:production"
@@ -123,7 +141,7 @@
           }
         },
         "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
+          "executor": "@netlify-builder/deploy:deploy",
           "options": {
             "outputPath": "apps/blog-medium-emily-xiong/public",
             "siteId": "9e1790a3-42c0-4f40-9c4c-40396ae5728c"
@@ -166,7 +184,9 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["libs/ui/**/*.{ts,tsx,js,jsx}"] }
+          "options": {
+            "lintFilePatterns": ["libs/ui/**/*.{ts,tsx,js,jsx}"]
+          }
         },
         "test": {
           "executor": "@nrwl/jest:jest",

@@ -1,15 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Container, Theme, ThemeProvider } from '@material-ui/core';
+import {
+  AppBar,
+  Box,
+  Container,
+  Theme,
+  ThemeProvider,
+  Toolbar,
+  Typography,
+} from '@material-ui/core';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 
-/* eslint-disable-next-line */
 export interface LayoutProps {
   children: React.ReactNode;
   theme: Theme;
+  title: string;
+  homeLink: string;
 }
 
-export function Layout({ children, theme }: LayoutProps) {
+export function Layout({ children, theme, title, homeLink }: LayoutProps) {
   return (
     <>
       <Helmet>
@@ -25,7 +35,16 @@ export function Layout({ children, theme }: LayoutProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Container maxWidth="md">{children}</Container>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h5" component={Link} to={homeLink}>
+              {title}
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Container maxWidth="md">
+          <Box mt={3}>{children}</Box>
+        </Container>
       </ThemeProvider>
     </>
   );
