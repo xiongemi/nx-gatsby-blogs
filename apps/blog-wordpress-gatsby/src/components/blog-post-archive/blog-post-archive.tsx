@@ -1,16 +1,11 @@
+import { BlogPost, PostSummaryList } from '@nx-gatsby-blogs/ui';
+import { graphql } from 'gatsby';
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+
 import {
   BlogPostArchivePropsData,
   transformBlogPostArchivePropsDataToBlogPosts,
 } from './models/blog-post-archive-props-data';
-import {
-  BlogPost,
-  NoPostsFound,
-  PostSummary,
-  PostSummaryList,
-} from '@nx-gatsby-blogs/ui';
-import { Pagination, PaginationItem } from '@material-ui/lab';
 import { BlogPostArchivePropsPageContext } from './models/blog-post-archive-props-page-context';
 
 export interface BlogPostArchiveProps {

@@ -1,5 +1,5 @@
-import React from 'react';
 import { Redirect } from '@reach/router';
+import React from 'react';
 
 export function Index() {
   return <Redirect noThrow to="/blogs" />;

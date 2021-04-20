@@ -3,7 +3,7 @@ import React from 'react';
 
 import BlogPost from './blog-post';
 
-describe('BlogPost', () =>
+describe('BlogPost', () => {
   it('should render successfully', () => {
     const { baseElement } = render(<BlogPost />);
     expect(baseElement).toBeTruthy();

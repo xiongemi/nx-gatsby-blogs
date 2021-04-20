@@ -1,7 +1,12 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "import"],
+  "extends": [
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -17,6 +22,22 @@
                 "onlyDependOnLibsWithTags": ["*"]
               }
             ]
+          }
+        ],
+        "import/no-unresolved": "off",
+        "import/named": "warn",
+        "import/namespace": "warn",
+        "import/no-named-as-default": "off",
+        "import/export": "warn",
+        "import/order": [
+          "error",
+          {
+            "groups": ["builtin", "external", "parent", "sibling", "index"],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
           }
         ]
       }
