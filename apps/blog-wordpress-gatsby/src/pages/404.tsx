@@ -1,8 +1,12 @@
+import { Typography } from '@material-ui/core';
 import React from 'react';
-import AppLayout from '../components/app-layout';
 
 const NotFoundPage = () => {
-  return <AppLayout>Not found!</AppLayout>;
+  return (
+    <Typography variant="h5" component="h3">
+      Opps~ Something went wrong. Please go back and try again.
+    </Typography>
+  );
 };
 
 export default NotFoundPage;

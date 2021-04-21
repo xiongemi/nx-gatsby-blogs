@@ -1,0 +1,6 @@
+{
+  "name": "@nx-gatsby-blogs/ui",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js"
+}

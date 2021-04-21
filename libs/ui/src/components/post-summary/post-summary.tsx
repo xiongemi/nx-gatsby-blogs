@@ -1,6 +1,5 @@
 import {
   Avatar,
-  Button,
   Card,
   CardActionArea,
   CardContent,
@@ -9,9 +8,10 @@ import {
   Link,
   Typography,
 } from '@material-ui/core';
-import React from 'react';
-import { BlogPost } from '../../models/blog-post';
 import parse from 'html-react-parser';
+import React from 'react';
+
+import { BlogPost } from '../../models/blog-post';
 
 export interface PostSummaryProps {
   post: BlogPost;

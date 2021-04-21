@@ -46,6 +46,9 @@ module.exports = {
         path: __dirname,
       },
     },
+    {
+      resolve: require.resolve(`../../libs/ui`),
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

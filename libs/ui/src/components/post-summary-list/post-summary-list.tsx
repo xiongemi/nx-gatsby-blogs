@@ -2,6 +2,7 @@ import { Box, Grid } from '@material-ui/core';
 import { Pagination, PaginationItem } from '@material-ui/lab';
 import { Link } from 'gatsby';
 import React from 'react';
+
 import { BlogPost } from '../../models/blog-post';
 import NoPostsFound from '../no-posts-found/no-posts-found';
 import PostSummary from '../post-summary/post-summary';
