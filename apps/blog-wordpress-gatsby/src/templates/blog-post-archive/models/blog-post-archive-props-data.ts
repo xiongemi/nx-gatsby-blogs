@@ -18,11 +18,13 @@ export interface BlogPostArchivePropsData {
       title: string;
       excerpt: string;
       date: string;
+      uri: string;
       featuredImage?: {
         node: {
-          id: string;
-          link: string;
           altText: string;
+          localFile: {
+            url: string;
+          };
         };
       };
     }[];
@@ -47,8 +49,9 @@ export function transformBlogPostArchivePropsDataToBlogPosts(
       title: node.title,
       excerpt: node.excerpt,
       date: node.date,
+      url: node.uri,
       featuredImage: {
-        src: node.featuredImage?.node?.link,
+        src: node.featuredImage?.node?.localFile?.url,
         alt: node.featuredImage?.node?.altText,
       },
     };

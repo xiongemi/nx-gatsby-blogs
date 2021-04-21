@@ -5,9 +5,10 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
-  Link,
+  styled,
   Typography,
 } from '@material-ui/core';
+import { Link, navigate } from 'gatsby';
 import parse from 'html-react-parser';
 import React from 'react';
 
@@ -18,13 +19,21 @@ export interface PostSummaryProps {
   showAuthor?: boolean;
 }
 
+const StyledMediaCard = styled(CardMedia)(({ theme }) => ({
+  height: theme.spacing(20),
+}));
+
 export function PostSummary({ post, showAuthor = true }: PostSummaryProps) {
+  const cardActionClicked = () => {
+    navigate(post.url);
+  };
+
   return (
     <Card>
-      <CardActionArea>
+      <CardActionArea onClick={cardActionClicked}>
         {post.featuredImage && post.featuredImage.src && (
-          <CardMedia
-            src={post.featuredImage.src}
+          <StyledMediaCard
+            image={post.featuredImage.src}
             title={post.featuredImage.alt}
           />
         )}
@@ -49,7 +58,7 @@ export function PostSummary({ post, showAuthor = true }: PostSummaryProps) {
               <Avatar aria-label={post.author.name} src={post.author.avatar} />
             )
           }
-          title={<Link href={post.author.url}>{post.author.name}</Link>}
+          title={<Link to={post.author.url}>{post.author.name}</Link>}
           subheader={post.date}
         />
       )}

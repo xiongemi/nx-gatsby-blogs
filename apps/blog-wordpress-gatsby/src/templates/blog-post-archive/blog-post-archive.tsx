@@ -50,11 +50,13 @@ export const pageQuery = graphql`
         excerpt
         date(formatString: "MMMM DD, YYYY")
         title
+        uri
         featuredImage {
           node {
-            id
             altText
-            link
+            localFile {
+              url
+            }
           }
         }
       }

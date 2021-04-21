@@ -46,9 +46,6 @@ module.exports = {
         path: __dirname,
       },
     },
-    {
-      resolve: require.resolve(`../../libs/ui`),
-    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -63,7 +60,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-remove-trailing-slashes`,
-    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
@@ -71,5 +67,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-client-side-redirect`,
+    {
+      resolve: require.resolve(`../../libs/ui`),
+    },
   ],
 };

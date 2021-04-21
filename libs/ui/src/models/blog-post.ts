@@ -5,6 +5,7 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   date: string; // date in format of MMMM DD, YYYY
+  url: string;
   featuredImage: {
     src: string;
     alt: string;
