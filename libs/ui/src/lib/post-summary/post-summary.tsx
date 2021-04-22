@@ -38,7 +38,7 @@ export function PostSummary({ post, showAuthor = true }: PostSummaryProps) {
         )}
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {post.title}
+            {parse(post.title)}
           </Typography>
           {!showAuthor && (
             <Typography variant="subtitle1" color="textSecondary">

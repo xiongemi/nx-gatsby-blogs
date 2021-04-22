@@ -10,6 +10,24 @@ module.exports = {
         username: process.env.NX_MEDIUM_USERNAME,
       },
     },
+    `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layout.tsx`),
+      },
+    },
+    `gatsby-plugin-remove-trailing-slashes`,
+    {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        allowList: ['NX_BLOGS_BASE_HREF'],
+      },
+    },
+    `gatsby-plugin-client-side-redirect`,
+    {
+      resolve: require.resolve(`../../libs/ui`),
+    },
 
     {
       resolve: 'gatsby-plugin-svgr',
@@ -45,18 +63,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/logo.svg`,
       },
-    },
-
-    `gatsby-plugin-remove-trailing-slashes`,
-    {
-      resolve: `gatsby-plugin-env-variables`,
-      options: {
-        allowList: ['NX_BLOGS_BASE_HREF'],
-      },
-    },
-    `gatsby-plugin-client-side-redirect`,
-    {
-      resolve: require.resolve(`../../libs/ui`),
     },
   ],
 };
