@@ -1,3 +1,4 @@
+export * from './lib/author-summary/author-summary';
 export * from './lib/post-details/post-details';
 export * from './lib/no-posts-found/no-posts-found';
 export * from './lib/layout/layout';

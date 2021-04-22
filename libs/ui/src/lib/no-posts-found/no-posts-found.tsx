@@ -1,14 +1,8 @@
+import { Typography } from '@material-ui/core';
 import React from 'react';
 
-/* eslint-disable-next-line */
-export interface NoPostsFoundProps {}
-
-export function NoPostsFound(props: NoPostsFoundProps) {
-  return (
-    <div>
-      <h1>No posts found.</h1>
-    </div>
-  );
+export function NoPostsFound() {
+  return <Typography variant="h2">No posts found.</Typography>;
 }
 
 export default NoPostsFound;

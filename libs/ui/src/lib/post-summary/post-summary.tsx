@@ -1,18 +1,17 @@
 import {
-  Avatar,
   Card,
   CardActionArea,
   CardContent,
-  CardHeader,
   CardMedia,
   styled,
   Typography,
 } from '@material-ui/core';
-import { Link, navigate } from 'gatsby';
+import { navigate } from 'gatsby';
 import parse from 'html-react-parser';
 import React from 'react';
 
 import { BlogPost } from '../../models/blog-post';
+import AuthorSummary from '../author-summary/author-summary';
 
 export interface PostSummaryProps {
   post: BlogPost;
@@ -52,15 +51,7 @@ export function PostSummary({ post, showAuthor = true }: PostSummaryProps) {
         </CardContent>
       </CardActionArea>
       {showAuthor && (
-        <CardHeader
-          avatar={
-            post.author.avatar && (
-              <Avatar aria-label={post.author.name} src={post.author.avatar} />
-            )
-          }
-          title={<Link to={post.author.url}>{post.author.name}</Link>}
-          subheader={post.date}
-        />
+        <AuthorSummary author={post.author} subtitle={post.date} />
       )}
     </Card>
   );
