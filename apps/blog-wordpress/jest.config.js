@@ -1,10 +1,10 @@
 module.exports = {
-  displayName: 'blog-wordpress-gatsby',
+  displayName: 'blog-wordpress',
   preset: '../../jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/blog-wordpress-gatsby',
+  coverageDirectory: '../../coverage/apps/blog-wordpress',
 };

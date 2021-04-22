@@ -1,10 +1,10 @@
 module.exports = {
-  displayName: 'blog-medium-emily-xiong',
+  displayName: 'blog-medium',
   preset: '../../jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/blog-medium-emily-xiong',
+  coverageDirectory: '../../coverage/apps/blog-medium',
 };

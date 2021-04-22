@@ -3,7 +3,7 @@
   "cli": {
     "defaultCollection": "@nrwl/gatsby"
   },
-  "defaultProject": "blog-wordpress-gatsby",
+  "defaultProject": "blog-wordpress",
   "generators": {
     "@nrwl/react": {
       "application": {
@@ -17,15 +17,15 @@
     }
   },
   "projects": {
-    "blog-wordpress-gatsby": {
-      "root": "apps/blog-wordpress-gatsby",
-      "sourceRoot": "apps/blog-wordpress-gatsby/src",
+    "blog-wordpress": {
+      "root": "apps/blog-wordpress",
+      "sourceRoot": "apps/blog-wordpress/src",
       "projectType": "application",
       "targets": {
         "build": {
           "executor": "@nrwl/gatsby:build",
           "options": {
-            "outputPath": "apps/blog-wordpress-gatsby/public",
+            "outputPath": "apps/blog-wordpress/public",
             "uglify": true,
             "color": true,
             "profile": false
@@ -37,74 +37,72 @@
         "serve": {
           "executor": "@nrwl/gatsby:server",
           "options": {
-            "buildTarget": "blog-wordpress-gatsby:build"
+            "buildTarget": "blog-wordpress:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "blog-wordpress-gatsby:build:production"
+              "buildTarget": "blog-wordpress:build:production"
             }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-wordpress-gatsby/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/blog-wordpress/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/blog-wordpress-gatsby"],
+          "outputs": ["coverage/apps/blog-wordpress"],
           "options": {
-            "jestConfig": "apps/blog-wordpress-gatsby/jest.config.js",
+            "jestConfig": "apps/blog-wordpress/jest.config.js",
             "passWithNoTests": true
           }
         },
         "deploy": {
           "executor": "@netlify-builder/deploy:deploy",
           "options": {
-            "outputPath": "apps/blog-wordpress-gatsby/public",
+            "outputPath": "apps/blog-wordpress/public",
             "siteId": "54efdcd6-121a-46b9-aac1-b1dc6fb6b8fb"
           }
         }
       }
     },
-    "blog-wordpress-gatsby-e2e": {
-      "root": "apps/blog-wordpress-gatsby-e2e",
-      "sourceRoot": "apps/blog-wordpress-gatsby-e2e/src",
+    "blog-wordpress-e2e": {
+      "root": "apps/blog-wordpress-e2e",
+      "sourceRoot": "apps/blog-wordpress-e2e/src",
       "projectType": "application",
       "targets": {
         "e2e": {
           "executor": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/blog-wordpress-gatsby-e2e/cypress.json",
-            "tsConfig": "apps/blog-wordpress-gatsby-e2e/tsconfig.e2e.json",
-            "devServerTarget": "blog-wordpress-gatsby:serve"
+            "cypressConfig": "apps/blog-wordpress-e2e/cypress.json",
+            "tsConfig": "apps/blog-wordpress-e2e/tsconfig.e2e.json",
+            "devServerTarget": "blog-wordpress:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "blog-wordpress-gatsby:serve:production"
+              "devServerTarget": "blog-wordpress:serve:production"
             }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/blog-wordpress-gatsby-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["apps/blog-wordpress-e2e/**/*.{js,ts}"]
           }
         }
       }
     },
-    "blog-medium-emily-xiong": {
-      "root": "apps/blog-medium-emily-xiong",
-      "sourceRoot": "apps/blog-medium-emily-xiong/src",
+    "blog-medium": {
+      "root": "apps/blog-medium",
+      "sourceRoot": "apps/blog-medium/src",
       "projectType": "application",
       "targets": {
         "build": {
           "executor": "@nrwl/gatsby:build",
           "options": {
-            "outputPath": "apps/blog-medium-emily-xiong/public",
+            "outputPath": "apps/blog-medium/public",
             "uglify": true,
             "color": true,
             "profile": false
@@ -116,63 +114,59 @@
         "serve": {
           "executor": "@nrwl/gatsby:server",
           "options": {
-            "buildTarget": "blog-medium-emily-xiong:build"
+            "buildTarget": "blog-medium:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "blog-medium-emily-xiong:build:production"
+              "buildTarget": "blog-medium:build:production"
             }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-medium-emily-xiong/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/blog-medium/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/blog-medium-emily-xiong"],
+          "outputs": ["coverage/apps/blog-medium"],
           "options": {
-            "jestConfig": "apps/blog-medium-emily-xiong/jest.config.js",
+            "jestConfig": "apps/blog-medium/jest.config.js",
             "passWithNoTests": true
           }
         },
         "deploy": {
           "executor": "@netlify-builder/deploy:deploy",
           "options": {
-            "outputPath": "apps/blog-medium-emily-xiong/public",
+            "outputPath": "apps/blog-medium/public",
             "siteId": "9e1790a3-42c0-4f40-9c4c-40396ae5728c"
           }
         }
       }
     },
-    "blog-medium-emily-xiong-e2e": {
-      "root": "apps/blog-medium-emily-xiong-e2e",
-      "sourceRoot": "apps/blog-medium-emily-xiong-e2e/src",
+    "blog-medium-e2e": {
+      "root": "apps/blog-medium-e2e",
+      "sourceRoot": "apps/blog-medium-e2e/src",
       "projectType": "application",
       "targets": {
         "e2e": {
           "executor": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/blog-medium-emily-xiong-e2e/cypress.json",
-            "tsConfig": "apps/blog-medium-emily-xiong-e2e/tsconfig.e2e.json",
-            "devServerTarget": "blog-medium-emily-xiong:serve"
+            "cypressConfig": "apps/blog-medium-e2e/cypress.json",
+            "tsConfig": "apps/blog-medium-e2e/tsconfig.e2e.json",
+            "devServerTarget": "blog-medium:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "blog-medium-emily-xiong:serve:production"
+              "devServerTarget": "blog-medium:serve:production"
             }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-medium-emily-xiong-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/blog-medium-e2e/**/*.{js,ts}"]
           }
         }
       }

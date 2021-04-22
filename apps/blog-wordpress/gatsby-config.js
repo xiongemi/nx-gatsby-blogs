@@ -1,13 +1,26 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: `blog-medium-emily-xiong`,
+    title: `blog-wordpress`,
     description: `This is a gatsby application created by Nx.`,
   },
   plugins: [
     {
-      resolve: `gatsby-source-medium`,
+      /**
+       * First up is the WordPress source plugin that connects Gatsby
+       * to your WordPress site.
+       *
+       * visit the plugin docs to learn more
+       * https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/README.md
+       *
+       */
+      resolve: `gatsby-source-wordpress`,
       options: {
-        username: process.env.NX_MEDIUM_USERNAME,
+        // the only required plugin option for WordPress is the GraphQL url.
+        url: `${process.env.NX_WORDPRESS_SITE_URL}/graphql`,
       },
     },
 
@@ -37,7 +50,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `blog-medium-emily-xiong`,
+        name: `blog-wordpress`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
@@ -46,7 +59,6 @@ module.exports = {
         icon: `src/images/logo.svg`,
       },
     },
-
     `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-plugin-env-variables`,

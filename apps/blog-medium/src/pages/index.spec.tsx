@@ -8,6 +8,6 @@ describe('Index', () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const props: any = {};
     const { getByText } = render(<Index {...props} />);
-    expect(getByText('Welcome to blog-medium-emily-xiong!')).toBeTruthy();
+    expect(getByText('Welcome to blog-medium!')).toBeTruthy();
   });
 });
