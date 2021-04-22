@@ -23,6 +23,7 @@ module.exports = {
         url: `${process.env.NX_WORDPRESS_SITE_URL}/graphql`,
       },
     },
+    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
