@@ -2,6 +2,7 @@ import {
   AppBar,
   Box,
   Container,
+  styled,
   Theme,
   ThemeProvider,
   Toolbar,
@@ -17,6 +18,8 @@ export interface LayoutProps {
   theme: Theme;
   homeLink: string;
 }
+
+const StyledTitleText = styled(Link)({ textDecorationLine: 'none' });
 
 export function Layout({ children, theme, homeLink }: LayoutProps) {
   const data = useStaticQuery(
@@ -51,7 +54,7 @@ export function Layout({ children, theme, homeLink }: LayoutProps) {
           <Toolbar>
             <Typography
               variant="h5"
-              component={Link}
+              component={StyledTitleText}
               to={homeLink}
               color="inherit"
             >
