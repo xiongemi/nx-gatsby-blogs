@@ -50,7 +50,7 @@ export function Layout({ children, theme, homeLink }: LayoutProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <AppBar position="static">
+        <AppBar position="static" color="primary">
           <Toolbar>
             <Typography
               variant="h5"

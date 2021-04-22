@@ -1,22 +1,10 @@
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Divider,
-  Grid,
-  styled,
-  Typography,
-} from '@material-ui/core';
+import { Box, Divider, Grid, styled, Typography } from '@material-ui/core';
 import parse from 'html-react-parser';
 import React from 'react';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 import { BlogPost } from '../../models/blog-post';
 import AuthorSummary from '../author-summary/author-summary';
-import { Link } from 'gatsby';
 import PostSummary from '../post-summary/post-summary';
-import { PostSummaryList } from '@nx-gatsby-blogs/ui';
 
 export interface PostDetailsProps {
   post: BlogPost;

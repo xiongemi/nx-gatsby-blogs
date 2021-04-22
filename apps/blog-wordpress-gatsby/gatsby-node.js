@@ -29,7 +29,7 @@ exports.createPages = async (gatsbyUtilities) => {
 
   gatsbyUtilities.actions.createRedirect({
     fromPath: `/`,
-    toPath: `/blogs`,
+    toPath: process.env.NX_BLOGS_BASE_HREF,
     redirectInBrowser: true,
     isPermanent: true,
   });
