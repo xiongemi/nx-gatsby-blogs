@@ -21,15 +21,15 @@
     }
   },
   "projects": {
-    "blog-wordpress-gatsby": { "tags": [] },
-    "blog-wordpress-gatsby-e2e": {
+    "blog-wordpress": { "tags": [] },
+    "blog-wordpress-e2e": {
       "tags": [],
-      "implicitDependencies": ["blog-wordpress-gatsby"]
+      "implicitDependencies": ["blog-wordpress"]
     },
-    "blog-medium-emily-xiong": { "tags": [] },
-    "blog-medium-emily-xiong-e2e": {
+    "blog-medium": { "tags": [] },
+    "blog-medium-e2e": {
       "tags": [],
-      "implicitDependencies": ["blog-medium-emily-xiong"]
+      "implicitDependencies": ["blog-medium"]
     },
     "ui": { "tags": [] }
   }

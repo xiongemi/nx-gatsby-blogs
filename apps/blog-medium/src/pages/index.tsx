@@ -7,13 +7,13 @@ export function Index() {
   /*
    * Replace the elements below with your own.
    *
-   * Note: The corresponding styles are in the ./blog-medium-emily-xiong.none file.
+   * Note: The corresponding styles are in the ./blog-medium.none file.
    */
   return (
     <>
       <header className="flex">
         <Logo width="75" height="75" />
-        <h1>Welcome to blog-medium-emily-xiong!</h1>
+        <h1>Welcome to blog-medium!</h1>
       </header>
       <main>
         <h2>Resources &amp; Tools</h2>

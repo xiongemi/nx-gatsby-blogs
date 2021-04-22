@@ -5,7 +5,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": ["apps/blog-wordpress-gatsby/tsconfig.*?.json"]
+        "project": ["apps/blog-medium/tsconfig.*?.json"]
       },
       "rules": {}
     },

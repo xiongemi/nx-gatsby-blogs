@@ -38,10 +38,10 @@ testem.log
 .DS_Store
 Thumbs.db
 
-/apps/blog-wordpress-gatsby/node_modules
-/apps/blog-wordpress-gatsby/public
-/apps/blog-wordpress-gatsby/.cache
+/apps/blog-wordpress/node_modules
+/apps/blog-wordpress/public
+/apps/blog-wordpress/.cache
 
-/apps/blog-medium-emily-xiong/node_modules
-/apps/blog-medium-emily-xiong/public
-/apps/blog-medium-emily-xiong/.cache
+/apps/blog-medium/node_modules
+/apps/blog-medium/public
+/apps/blog-medium/.cache

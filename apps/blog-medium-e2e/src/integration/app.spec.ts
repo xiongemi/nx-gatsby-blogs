@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('blog-medium-emily-xiong', () => {
+describe('blog-medium', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('blog-medium-emily-xiong', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to blog-medium-emily-xiong!');
+    getGreeting().contains('Welcome to blog-medium!');
   });
 });
