@@ -1,25 +1,40 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import {
   AppBar,
   Box,
   Container,
+  styled,
   Theme,
   ThemeProvider,
   Toolbar,
   Typography,
 } from '@material-ui/core';
-import { Link } from 'gatsby';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { graphql, useStaticQuery, Link } from 'gatsby';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 export interface LayoutProps {
   children: React.ReactNode;
   theme: Theme;
   homeLink: string;
-  title: string;
 }
 
-export function Layout({ children, theme, title, homeLink }: LayoutProps) {
+const StyledTitleText = styled(Link)({ textDecorationLine: 'none' });
+
+export function Layout({ children, theme, homeLink }: LayoutProps) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  );
+  const title = data?.site?.siteMetadata?.title;
+
   return (
     <>
       <Helmet>
@@ -35,14 +50,19 @@ export function Layout({ children, theme, title, homeLink }: LayoutProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <AppBar position="static">
+        <AppBar position="static" color="primary">
           <Toolbar>
-            <Typography variant="h5" component={Link} to={homeLink}>
+            <Typography
+              variant="h5"
+              component={StyledTitleText}
+              to={homeLink}
+              color="inherit"
+            >
               {title}
             </Typography>
           </Toolbar>
         </AppBar>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Box mt={3}>{children}</Box>
         </Container>
       </ThemeProvider>

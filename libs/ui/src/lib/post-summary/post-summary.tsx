@@ -1,30 +1,38 @@
 import {
-  Avatar,
-  Button,
   Card,
   CardActionArea,
   CardContent,
-  CardHeader,
   CardMedia,
-  Link,
+  styled,
   Typography,
 } from '@material-ui/core';
-import React from 'react';
-import { BlogPost } from '../../models/blog-post';
+import { navigate } from 'gatsby';
 import parse from 'html-react-parser';
+import React from 'react';
+
+import { BlogPost } from '../../models/blog-post';
+import AuthorSummary from '../author-summary/author-summary';
 
 export interface PostSummaryProps {
   post: BlogPost;
   showAuthor?: boolean;
 }
 
+const StyledMediaCard = styled(CardMedia)(({ theme }) => ({
+  height: theme.spacing(20),
+}));
+
 export function PostSummary({ post, showAuthor = true }: PostSummaryProps) {
+  const cardActionClicked = () => {
+    navigate(post.url);
+  };
+
   return (
     <Card>
-      <CardActionArea>
+      <CardActionArea onClick={cardActionClicked}>
         {post.featuredImage && post.featuredImage.src && (
-          <CardMedia
-            src={post.featuredImage.src}
+          <StyledMediaCard
+            image={post.featuredImage.src}
             title={post.featuredImage.alt}
           />
         )}
@@ -43,15 +51,7 @@ export function PostSummary({ post, showAuthor = true }: PostSummaryProps) {
         </CardContent>
       </CardActionArea>
       {showAuthor && (
-        <CardHeader
-          avatar={
-            post.author.avatar && (
-              <Avatar aria-label={post.author.name} src={post.author.avatar} />
-            )
-          }
-          title={<Link href={post.author.url}>{post.author.name}</Link>}
-          subheader={post.date}
-        />
+        <AuthorSummary author={post.author} subtitle={post.date} />
       )}
     </Card>
   );

@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import AppLayout from './app-layout';
+import AuthorSummary from './author-summary';
 
-describe('AppLayout', () => {
+describe('AuthorSummary', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<AppLayout />);
+    const { baseElement } = render(<AuthorSummary />);
     expect(baseElement).toBeTruthy();
   });
 });

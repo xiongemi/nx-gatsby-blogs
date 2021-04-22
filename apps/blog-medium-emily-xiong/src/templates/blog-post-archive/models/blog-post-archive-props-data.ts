@@ -6,7 +6,7 @@ import {
 } from '../../../models/blog-post-query-data';
 
 export interface BlogPostArchivePropsData {
-  allWpPost: {
+  allMediumPost: {
     nodes: BlogPostQueryData[];
   };
 }
@@ -14,5 +14,5 @@ export interface BlogPostArchivePropsData {
 export function transformBlogPostArchivePropsDataToBlogPosts(
   data: BlogPostArchivePropsData
 ): BlogPost[] {
-  return data?.allWpPost?.nodes?.map(transformBlogPostQueryDataToBlogPost);
+  return data?.allMediumPost?.nodes?.map(transformBlogPostQueryDataToBlogPost);
 }

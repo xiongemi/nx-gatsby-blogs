@@ -8,6 +8,10 @@
 const path = require(`path`);
 const chunk = require(`lodash/chunk`);
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 /**
  * exports.createPages is a built-in Gatsby Node API.
  * It's purpose is to allow you to create pages for your site! 💡
@@ -25,7 +29,7 @@ exports.createPages = async (gatsbyUtilities) => {
 
   gatsbyUtilities.actions.createRedirect({
     fromPath: `/`,
-    toPath: `/blogs`,
+    toPath: process.env.NX_BLOGS_BASE_HREF,
     redirectInBrowser: true,
     isPermanent: true,
   });

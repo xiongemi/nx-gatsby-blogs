@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `blog-wordpress-gatsby`,
@@ -56,7 +60,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-remove-trailing-slashes`,
-    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
@@ -64,5 +67,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-client-side-redirect`,
+    {
+      resolve: require.resolve(`../../libs/ui`),
+    },
   ],
 };

@@ -2,6 +2,7 @@ import { Box, Grid } from '@material-ui/core';
 import { Pagination, PaginationItem } from '@material-ui/lab';
 import { Link } from 'gatsby';
 import React from 'react';
+
 import { BlogPost } from '../../models/blog-post';
 import NoPostsFound from '../no-posts-found/no-posts-found';
 import PostSummary from '../post-summary/post-summary';
@@ -43,7 +44,11 @@ export function PostSummaryList({
             renderItem={(item) => (
               <PaginationItem
                 component={Link}
-                to={`${process.env.NX_BLOGS_BASE_HREF}/${item.page}`}
+                to={
+                  item.page === 1
+                    ? process.env.NX_BLOGS_BASE_HREF
+                    : `${process.env.NX_BLOGS_BASE_HREF}/${item.page}`
+                }
                 {...item}
               />
             )}

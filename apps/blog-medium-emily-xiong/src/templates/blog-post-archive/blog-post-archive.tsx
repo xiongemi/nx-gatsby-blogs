@@ -28,36 +28,28 @@ export function BlogPostArchive({ data, pageContext }: BlogPostArchiveProps) {
 export default BlogPostArchive;
 
 export const pageQuery = graphql`
-  query WordPressPostArchive($offset: Int!, $postsPerPage: Int!) {
-    allWpPost(
-      sort: { fields: [date], order: DESC }
+  query MediumPostArchive($offset: Int!, $postsPerPage: Int!) {
+    allMediumPost(
+      sort: { fields: [createdAt], order: DESC }
       limit: $postsPerPage
       skip: $offset
     ) {
       nodes {
         author {
-          node {
-            firstName
-            lastName
-            name
-            uri
-            avatar {
-              url
-            }
-          }
+          imageId
+          username
+          bio
+          name
         }
         id
-        excerpt
-        date(formatString: "MMMM DD, YYYY")
+        createdAt(formatString: "MMMM DD, YYYY")
         title
-        uri
-        featuredImage {
-          node {
-            altText
-            localFile {
-              url
-            }
+        uniqueSlug
+        virtuals {
+          previewImage {
+            imageId
           }
+          subtitle
         }
       }
     }
