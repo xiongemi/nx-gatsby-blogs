@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[534],{1799:function(t,e,r){"use strict";r.r(e),r.d(e,{BlogPost:function(){return n}});r(2784);var s=r(2322);function n(t){return(0,s.jsx)("div",{children:(0,s.jsx)("h1",{children:"Welcome to blog-post!"})})}e.default=n}}]);
+//# sourceMappingURL=component---src-templates-blog-post-blog-post-tsx-da62d8aef8732b3489fb.js.map
