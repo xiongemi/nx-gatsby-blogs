@@ -51,7 +51,7 @@ export function Layout({ children, theme, homeLink }: LayoutProps) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <AppBar position="static" color="primary">
-          <Toolbar>
+          <Toolbar data-testid="title">
             <Typography
               variant="h5"
               component={StyledTitleText}

@@ -16,9 +16,8 @@ export function transformBlogPostPropsDataToPostDetailsProps(
 ): PostDetailsProps {
   return {
     post: transformBlogPostQueryDataToBlogPost(data.post),
-    previous: data.previous
-      ? transformBlogPostQueryDataToBlogPost(data.previous)
-      : null,
-    next: data.next ? transformBlogPostQueryDataToBlogPost(data.next) : null,
+    previous:
+      data.previous && transformBlogPostQueryDataToBlogPost(data.previous),
+    next: data.next && transformBlogPostQueryDataToBlogPost(data.next),
   };
 }

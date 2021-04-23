@@ -17,7 +17,7 @@ export interface BlogPostQueryData {
   excerpt: string;
   date: string;
   uri: string;
-  content: string;
+  content?: string;
   featuredImage?: {
     node: {
       altText: string;
@@ -47,9 +47,9 @@ export function transformBlogPostQueryDataToBlogPost(
     date: data.date,
     url: data.uri,
     content: data.content,
-    featuredImage: {
-      src: data.featuredImage?.node?.localFile?.url,
-      alt: data.featuredImage?.node?.altText,
+    featuredImage: data.featuredImage && {
+      src: data.featuredImage.node?.localFile?.url,
+      alt: data.featuredImage.node?.altText,
     },
   };
 }

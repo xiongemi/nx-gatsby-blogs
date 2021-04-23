@@ -56,6 +56,12 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+      ignore: [
+        '**/*.spec.ts',
+        '**/*.spec.tsx',
+        '**/*.spec.js',
+        '**/*.spec.jsx',
+      ],
     },
     `gatsby-transformer-sharp`,
     {

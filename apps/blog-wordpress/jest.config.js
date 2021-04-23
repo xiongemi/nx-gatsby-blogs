@@ -7,4 +7,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/blog-wordpress',
+  setupFilesAfterEnv: ['./jest.setup.js'],
 };
