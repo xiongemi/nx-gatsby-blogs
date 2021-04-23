@@ -17,7 +17,6 @@ jest.mock('gatsby', () => ({
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   graphql: () => {},
   Link: ({ children }) => {
-    // eslint-disable-next-line react/jsx-no-useless-fragment
     return children;
   },
   useStaticQuery: () => ({
