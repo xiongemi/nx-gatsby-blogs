@@ -45,3 +45,6 @@ Thumbs.db
 /apps/blog-medium/node_modules
 /apps/blog-medium/public
 /apps/blog-medium/.cache
+
+# .env that contains netlify token
+.env

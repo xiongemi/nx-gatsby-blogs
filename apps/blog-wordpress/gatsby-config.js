@@ -3,6 +3,7 @@ require('dotenv').config({
 });
 
 module.exports = {
+  pathPrefix: process.env.NX_PATH_PREFIX || '/',
   siteMetadata: {
     title: `blog-wordpress`,
     description: `This is a gatsby application created by Nx.`,

@@ -22,9 +22,19 @@ const StyledMediaCard = styled(CardMedia)(({ theme }) => ({
   height: theme.spacing(20),
 }));
 
+// regex taken from https://stackoverflow.com/questions/10687099/how-to-test-if-a-url-string-is-absolute-or-relative
+const isAbsolutePath = (path: string): boolean => {
+  const regex = /^https?:\/\//i;
+  return regex.test(path);
+};
+
 export function PostSummary({ post, showAuthor = true }: PostSummaryProps) {
   const cardActionClicked = () => {
-    navigate(post.url);
+    if (isAbsolutePath(post.url)) {
+      window.open(post.url, '_blank');
+    } else {
+      navigate(post.url);
+    }
   };
 
   return (
