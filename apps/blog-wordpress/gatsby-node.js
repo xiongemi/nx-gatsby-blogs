@@ -27,13 +27,6 @@ exports.createPages = async (gatsbyUtilities) => {
     return;
   }
 
-  gatsbyUtilities.actions.createRedirect({
-    fromPath: `/`,
-    toPath: process.env.NX_BLOGS_BASE_HREF,
-    redirectInBrowser: true,
-    isPermanent: true,
-  });
-
   // If there are posts, create pages for them
   await createIndividualBlogPostPages({ posts, gatsbyUtilities });
 

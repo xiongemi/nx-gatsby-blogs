@@ -25,7 +25,6 @@ module.exports = {
         allowList: ['NX_BLOGS_BASE_HREF'],
       },
     },
-    `gatsby-plugin-client-side-redirect`,
     {
       resolve: require.resolve(`../../libs/ui`),
     },
