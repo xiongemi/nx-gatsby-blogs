@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-source-medium`,
       options: {
-        username: process.env.NX_MEDIUM_USERNAME,
+        username: process.env.MEDIUM_USERNAME,
       },
     },
     `gatsby-plugin-material-ui`,
@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: ['NX_BLOGS_BASE_HREF'],
+        allowList: ['BLOGS_BASE_HREF'],
       },
     },
     {

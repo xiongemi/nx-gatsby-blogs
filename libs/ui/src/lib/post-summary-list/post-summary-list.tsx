@@ -46,8 +46,8 @@ export function PostSummaryList({
                 component={Link}
                 to={
                   item.page === 1
-                    ? process.env.NX_BLOGS_BASE_HREF
-                    : `${process.env.NX_BLOGS_BASE_HREF}/${item.page}`
+                    ? process.env.BLOGS_BASE_HREF
+                    : `${process.env.BLOGS_BASE_HREF}/${item.page}`
                 }
                 {...item}
               />

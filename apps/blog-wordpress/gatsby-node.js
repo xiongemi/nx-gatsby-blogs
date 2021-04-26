@@ -70,7 +70,7 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
  * This function creates all the individual blog pages in this site
  */
 async function createBlogPostArchive({ posts, gatsbyUtilities }) {
-  const postsPerPage = parseInt(process.env.NX_POSTS_PER_PAGE, 10);
+  const postsPerPage = parseInt(process.env.POSTS_PER_PAGE, 10);
 
   const postsChunkedIntoArchivePages = chunk(posts, postsPerPage);
   const totalPages = postsChunkedIntoArchivePages.length;
@@ -82,8 +82,8 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
       const getPagePath = (page) => {
         if (page > 0 && page <= totalPages) {
           return page === 1
-            ? process.env.NX_BLOGS_BASE_HREF
-            : `${process.env.NX_BLOGS_BASE_HREF}/${page}`;
+            ? process.env.BLOGS_BASE_HREF
+            : `${process.env.BLOGS_BASE_HREF}/${page}`;
         }
 
         return null;
