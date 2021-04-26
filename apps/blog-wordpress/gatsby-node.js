@@ -27,18 +27,38 @@ exports.createPages = async (gatsbyUtilities) => {
     return;
   }
 
+  const users = await getUsers(gatsbyUtilities);
+
   // If there are posts, create pages for them
   await createIndividualBlogPostPages({ posts, gatsbyUtilities });
 
   // And a paginated archive
   await createBlogPostArchive({ posts, gatsbyUtilities });
+
+  await createAuthorPages({ users, gatsbyUtilities });
 };
+
+async function createAuthorPages({ users, gatsbyUtilities }) {
+  return Promise.all(
+    users.map((user) => {
+      // createPage is an action passed to createPages
+      // See https://www.gatsbyjs.com/docs/actions#createPage for more info
+      return gatsbyUtilities.actions.createPage({
+        path: user.uri,
+        component: path.resolve(`./src/templates/author/author.tsx`),
+        context: {
+          id: user.id,
+        },
+      });
+    })
+  );
+}
 
 /**
  * This function creates all the individual blog pages in this site
  */
-const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
-  Promise.all(
+async function createIndividualBlogPostPages({ posts, gatsbyUtilities }) {
+  return Promise.all(
     posts.map(({ previous, post, next }) =>
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
@@ -65,6 +85,7 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
       })
     )
   );
+}
 
 /**
  * This function creates all the individual blog pages in this site
@@ -79,20 +100,10 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
     postsChunkedIntoArchivePages.map(async (_posts, index) => {
       const pageNumber = index + 1;
 
-      const getPagePath = (page) => {
-        if (page > 0 && page <= totalPages) {
-          return page === 1
-            ? process.env.BLOGS_BASE_HREF
-            : `${process.env.BLOGS_BASE_HREF}/${page}`;
-        }
-
-        return null;
-      };
-
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
       await gatsbyUtilities.actions.createPage({
-        path: getPagePath(pageNumber),
+        path: `${process.env.BLOGS_BASE_HREF}/${pageNumber}`,
 
         // use the blog post archive template as the page component
         component: path.resolve(
@@ -157,4 +168,35 @@ async function getPosts({ graphql, reporter }) {
   }
 
   return graphqlResult.data.allWpPost.edges;
+}
+
+/**
+ * This function queries Gatsby's GraphQL server and asks for
+ * All WordPress blog posts. If there are any GraphQL error it throws an error
+ * Otherwise it will return the posts 🙌
+ *
+ * We're passing in the utilities we got from createPages.
+ * So see https://www.gatsbyjs.com/docs/node-apis/#createPages for more info!
+ */
+async function getUsers({ graphql, reporter }) {
+  const graphqlResult = await graphql(/* GraphQL */ `
+    query {
+      allWpUser {
+        nodes {
+          id
+          uri
+        }
+      }
+    }
+  `);
+
+  if (graphqlResult.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your blog posts`,
+      graphqlResult.errors
+    );
+    return;
+  }
+
+  return graphqlResult.data.allWpUser.nodes;
 }

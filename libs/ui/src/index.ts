@@ -1,3 +1,4 @@
+export * from './lib/author-details/author-details';
 export * from './lib/author-summary/author-summary';
 export * from './lib/post-details/post-details';
 export * from './lib/no-posts-found/no-posts-found';
@@ -6,3 +7,4 @@ export * from './lib/post-summary/post-summary';
 export * from './lib/post-summary-list/post-summary-list';
 
 export * from './models/blog-post';
+export * from './models/blog-author';

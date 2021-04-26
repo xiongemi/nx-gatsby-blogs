@@ -5,7 +5,7 @@ import { theme } from './theme';
 
 export function AppLayout({ children }) {
   return (
-    <Layout theme={theme} homeLink={process.env.BLOGS_BASE_HREF}>
+    <Layout theme={theme} homeLink={process.env.BLOGS_BASE_HREF + '/1'}>
       {children}
     </Layout>
   );

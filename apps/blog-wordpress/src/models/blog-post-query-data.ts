@@ -1,7 +1,7 @@
 import { BlogPost } from '@nx-gatsby-blogs/ui';
 
 export interface BlogPostQueryData {
-  author: {
+  author?: {
     node: {
       firstName: string;
       lastName: string;

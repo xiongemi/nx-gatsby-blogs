@@ -44,20 +44,10 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
     postsChunkedIntoArchivePages.map(async (_posts, index) => {
       const pageNumber = index + 1;
 
-      const getPagePath = (page) => {
-        if (page > 0 && page <= totalPages) {
-          return page === 1
-            ? process.env.BLOGS_BASE_HREF
-            : `${process.env.BLOGS_BASE_HREF}/${page}`;
-        }
-
-        return null;
-      };
-
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
       await gatsbyUtilities.actions.createPage({
-        path: getPagePath(pageNumber),
+        path: `${process.env.BLOGS_BASE_HREF}/${pageNumber}`,
 
         // use the blog post archive template as the page component
         component: path.resolve(
