@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[691],{2261:function(t,e,n){"use strict";n.r(e),n.d(e,{Index:function(){return u}});var r=n(4541),s=(n(2784),n(2322));function u(){var t;return(0,s.jsx)(r.Redirect,{noThrow:!0,to:(null!==(t="/nx-gatsby-blogs")?t:"")+"/blogs/1"})}e.default=u}}]);
+//# sourceMappingURL=component---src-pages-index-tsx-d563d2ecab82d7c1f24f.js.map
