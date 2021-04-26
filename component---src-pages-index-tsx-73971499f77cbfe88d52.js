@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[691],{2261:function(t,e,r){"use strict";r.r(e),r.d(e,{Index:function(){return a}});var n=r(4541),u=(r(2784),r(2322));function a(){var t;return(0,u.jsx)(n.Redirect,{noThrow:!0,to:(null!==(t={}.NX_PATH_PREFIX)&&void 0!==t?t:"")+"/blogs/1"})}e.default=a}}]);
+//# sourceMappingURL=component---src-pages-index-tsx-73971499f77cbfe88d52.js.map
