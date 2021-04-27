@@ -1,5 +1,3 @@
-
-
 # NxGatsbyBlogs
 
 This project was generated using [Nx](https://nx.dev).
@@ -7,6 +5,22 @@ This project was generated using [Nx](https://nx.dev).
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
 🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+
+## Commands
+
+- run wordpress blog: `nx serve blog-wordpress`
+- run medium blog: `nx serve blog-medium`
+- build wordpress blog: `nx build blog-wordpress --prod` or `npm run build:blog-wordpress`
+- build medium blog: `nx build blog-medium --prod` or `npm run build:blog-medium`
+- deploy netlify: create an `.env` file and add `NETLIFY_TOKEN=` in the file and run `npm run deploy:netlify`
+- deploy wordpress blog to github page: `npm run deploy:blog-wordpress:github`
+- deploy medium blog to github page: `npm run deploy:blog-medium:github`
+
+## Deploy Blogs
+
+- Netlify sourcing from Medium: https://nx-blog-medium.netlify.app/
+- Netlify sourcing from WordPress: https://nx-blog-wordpress.netlify.app/
+- Github Page sourcing from WordPress: https://xiongemi.github.io/nx-gatsby-blogs
 
 ## Adding capabilities to your workspace
 
@@ -78,8 +92,6 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
 
 ## ☁ Nx Cloud
 

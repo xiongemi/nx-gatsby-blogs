@@ -35,7 +35,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: ['NX_BLOGS_BASE_HREF'],
+        allowList: ['NX_PATH_PREFIX', 'BLOGS_BASE_HREF'],
       },
     },
     {

@@ -20,7 +20,12 @@ export function PostDetails({ post, previous, next }: PostDetailsProps) {
   return (
     <>
       <article itemScope itemType="http://schema.org/Article">
-        <Typography variant="h2" component="h1" itemProp="headeline">
+        <Typography
+          variant="h2"
+          component="h1"
+          itemProp="headeline"
+          noWrap={true}
+        >
           {post.title}
         </Typography>
         <AuthorSummary author={post.author} subtitle={post.date} />

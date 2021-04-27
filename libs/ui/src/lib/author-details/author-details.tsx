@@ -27,10 +27,12 @@ export function AuthorDetails({ author, posts }: AuthorDetailsProps) {
         <Typography variant="h2" component="h1">
           {author.name}
         </Typography>
-        {author.description && (
-          <Typography variant="subtitle1">{author.description}</Typography>
-        )}
       </Box>
+      {author.description && (
+        <Typography variant="subtitle1" component="p">
+          {author.description}
+        </Typography>
+      )}
       <Divider />
       <Box mt={3} mb={3}>
         <Typography variant="h5" component="h5">
