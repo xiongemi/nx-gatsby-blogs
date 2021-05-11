@@ -70,7 +70,7 @@
     "@babel/preset-env": "7.12.13",
     "@babel/preset-react": "7.12.13",
     "@babel/preset-typescript": "7.12.13",
-    "@netlify-builder/deploy": "^2.0.3",
+    "@netlify-builder/deploy": "^3.2.0",
     "@nrwl/cli": "12.1.1",
     "@nrwl/cypress": "12.1.1",
     "@nrwl/eslint-plugin-nx": "12.1.1",
