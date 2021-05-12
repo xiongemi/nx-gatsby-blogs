@@ -35,7 +35,7 @@ exports.createPages = async (gatsbyUtilities) => {
  * This function creates all the individual blog pages in this site
  */
 async function createBlogPostArchive({ posts, gatsbyUtilities }) {
-  const postsPerPage = parseInt(process.env.POSTS_PER_PAGE, 10);
+  const postsPerPage = parseInt(process.env.POSTS_PER_PAGE || 6, 10);
 
   const postsChunkedIntoArchivePages = chunk(posts, postsPerPage);
   const totalPages = postsChunkedIntoArchivePages.length;
@@ -51,7 +51,7 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
 
         // use the blog post archive template as the page component
         component: path.resolve(
-          `./src/templates/blog-post-archive/blog-post-archive.tsx`
+          __dirname + `/src/templates/blog-post-archive/blog-post-archive.tsx`
         ),
 
         // `context` is available in the template as a prop and

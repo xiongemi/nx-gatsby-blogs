@@ -1,7 +1,7 @@
 import { Layout } from '@nx-gatsby-blogs/ui';
 import React from 'react';
 
-import { theme } from './theme';
+import { theme } from '../theme';
 
 export function AppLayout({ children }) {
   return (

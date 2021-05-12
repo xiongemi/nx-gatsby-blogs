@@ -4,8 +4,7 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "gatsby-config.js",
   "dependencies": {
-    "gatsby": "3.2.1"
+    "gatsby": "*"
   }
 }

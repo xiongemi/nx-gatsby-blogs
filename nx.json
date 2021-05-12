@@ -1,13 +1,18 @@
 {
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "npmScope": "nx-gatsby-blogs",
   "tasksRunnerOptions": {
     "default": {
@@ -21,16 +26,29 @@
     }
   },
   "projects": {
-    "blog-wordpress": { "tags": [] },
+    "blog-wordpress": {
+      "tags": []
+    },
     "blog-wordpress-e2e": {
       "tags": [],
       "implicitDependencies": ["blog-wordpress"]
     },
-    "blog-medium": { "tags": [] },
+    "blog-medium": {
+      "tags": []
+    },
     "blog-medium-e2e": {
       "tags": [],
       "implicitDependencies": ["blog-medium"]
     },
-    "ui": { "tags": [] }
+    "ui": {
+      "tags": []
+    },
+    "blog-medium-emily-xiong": {
+      "tags": []
+    },
+    "blog-medium-emily-xiong-e2e": {
+      "tags": [],
+      "implicitDependencies": ["blog-medium-emily-xiong"]
+    }
   }
 }

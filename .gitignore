@@ -48,3 +48,7 @@ Thumbs.db
 
 # .env that contains netlify token
 .env
+
+/apps/blog-medium-emily-xiong/node_modules
+/apps/blog-medium-emily-xiong/public
+/apps/blog-medium-emily-xiong/.cache

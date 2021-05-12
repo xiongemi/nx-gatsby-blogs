@@ -10,3 +10,7 @@
 /apps/blog-medium/node_modules
 /apps/blog-medium/public
 /apps/blog-medium/.cache
+
+/apps/blog-medium-emily-xiong/node_modules
+/apps/blog-medium-emily-xiong/public
+/apps/blog-medium-emily-xiong/.cache
