@@ -36,9 +36,9 @@
   },
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
+    "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "*",
+    "@material-ui/lab": "^4.0.0-alpha.58",
     "core-js": "^3.6.5",
     "document-register-element": "1.13.1",
     "gatsby": "3.7.0",
