@@ -17,83 +17,6 @@
     }
   },
   "projects": {
-    "blog-wordpress": {
-      "root": "apps/blog-wordpress",
-      "sourceRoot": "apps/blog-wordpress/src",
-      "projectType": "application",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/gatsby:build",
-          "options": {
-            "outputPath": "apps/blog-wordpress/public",
-            "uglify": true,
-            "color": true,
-            "profile": false
-          },
-          "configurations": {
-            "production": {}
-          }
-        },
-        "serve": {
-          "executor": "@nrwl/gatsby:server",
-          "options": {
-            "buildTarget": "blog-wordpress:build"
-          },
-          "configurations": {
-            "production": {
-              "buildTarget": "blog-wordpress:build:production"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/blog-wordpress/**/*.{ts,tsx,js,jsx}"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/blog-wordpress"],
-          "options": {
-            "jestConfig": "apps/blog-wordpress/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "deploy": {
-          "executor": "@netlify-builder/deploy:deploy",
-          "options": {
-            "outputPath": "apps/blog-wordpress/public",
-            "siteId": "54efdcd6-121a-46b9-aac1-b1dc6fb6b8fb"
-          }
-        }
-      }
-    },
-    "blog-wordpress-e2e": {
-      "root": "apps/blog-wordpress-e2e",
-      "sourceRoot": "apps/blog-wordpress-e2e/src",
-      "projectType": "application",
-      "targets": {
-        "e2e": {
-          "executor": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/blog-wordpress-e2e/cypress.json",
-            "tsConfig": "apps/blog-wordpress-e2e/tsconfig.e2e.json",
-            "devServerTarget": "blog-wordpress:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "blog-wordpress:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/blog-wordpress-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
     "blog-medium": {
       "root": "apps/blog-medium",
       "sourceRoot": "apps/blog-medium/src",
@@ -167,6 +90,83 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/blog-medium-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "blog-wordpress": {
+      "root": "apps/blog-wordpress",
+      "sourceRoot": "apps/blog-wordpress/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/gatsby:build",
+          "options": {
+            "outputPath": "apps/blog-wordpress/public",
+            "uglify": true,
+            "color": true,
+            "profile": false
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/gatsby:server",
+          "options": {
+            "buildTarget": "blog-wordpress:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "blog-wordpress:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/blog-wordpress/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/blog-wordpress"],
+          "options": {
+            "jestConfig": "apps/blog-wordpress/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "executor": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "apps/blog-wordpress/public",
+            "siteId": "54efdcd6-121a-46b9-aac1-b1dc6fb6b8fb"
+          }
+        }
+      }
+    },
+    "blog-wordpress-e2e": {
+      "root": "apps/blog-wordpress-e2e",
+      "sourceRoot": "apps/blog-wordpress-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/blog-wordpress-e2e/cypress.json",
+            "tsConfig": "apps/blog-wordpress-e2e/tsconfig.e2e.json",
+            "devServerTarget": "blog-wordpress:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "blog-wordpress:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/blog-wordpress-e2e/**/*.{js,ts}"]
           }
         }
       }

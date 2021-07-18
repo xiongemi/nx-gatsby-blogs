@@ -1,13 +1,18 @@
 {
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "npmScope": "nx-gatsby-blogs",
   "tasksRunnerOptions": {
     "default": {
@@ -21,16 +26,30 @@
     }
   },
   "projects": {
-    "blog-wordpress": { "tags": [] },
-    "blog-wordpress-e2e": {
-      "tags": [],
-      "implicitDependencies": ["blog-wordpress"]
+    "blog-medium": {
+      "tags": []
     },
-    "blog-medium": { "tags": [] },
     "blog-medium-e2e": {
       "tags": [],
       "implicitDependencies": ["blog-medium"]
     },
-    "ui": { "tags": [] }
+    "blog-wordpress": {
+      "tags": []
+    },
+    "blog-wordpress-e2e": {
+      "tags": [],
+      "implicitDependencies": ["blog-wordpress"]
+    },
+    "ui": {
+      "tags": []
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }

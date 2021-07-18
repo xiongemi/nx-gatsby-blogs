@@ -16,7 +16,6 @@ export interface AuthorProps {
 export function Author({ data, pageContext }) {
   const author = transformAuthorPropsDataToBlogAuthor(data);
   const posts = transformAuthorPropsDataToBlogPosts(data);
-  console.log(data, pageContext);
   return <AuthorDetails author={author} posts={posts}></AuthorDetails>;
 }
 

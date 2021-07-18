@@ -1,11 +1,11 @@
 import { grey } from '@material-ui/core/colors';
-import { createMuiTheme, Theme } from '@material-ui/core/styles';
+import { createTheme, Theme } from '@material-ui/core/styles';
 import { render } from '@testing-library/react';
 import React from 'react';
 
 import Layout from './layout';
 
-export const mockTheme: Theme = createMuiTheme({
+export const mockTheme: Theme = createTheme({
   palette: {
     primary: {
       main: grey[400],
